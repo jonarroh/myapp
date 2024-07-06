@@ -49,14 +49,13 @@ class _AddListState extends State<AddList> {
     await prefs.setString('topics', json.encode(topics));
 
     if (mounted) {
-      Navigator.pop(context);
+      Navigator.popAndPushNamed(context, '');
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Agregar una nueva tarea')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
