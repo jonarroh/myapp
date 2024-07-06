@@ -80,17 +80,18 @@ class _TareaslistState extends State<Tareaslist> {
           children: [
             //retorna a la pantalla anterior
             IconButton(
-              icon: const Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back, color: Colors.white),
               onPressed: () {
                 Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const Listas()), (route) => false);
               },
             ),
-            const Icon(Icons.list),
-            const SizedBox(width: 8),
-            Text(widget.topic),
+            const Icon(Icons.list, color: Colors.white),
+            const SizedBox(width: 8,),
+            Text(widget.topic, style: const TextStyle(fontSize: 24,color: Colors.white),),
 
           ],
         ),
+        backgroundColor: Colors.pink,
       ),
       bottomNavigationBar: FluidNavBar(
         icons: [
@@ -147,10 +148,18 @@ class _TareaslistState extends State<Tareaslist> {
             color: Colors.red,
             alignment: Alignment.centerRight,
             child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Icon(Icons.delete, color: Colors.white),
+              padding: EdgeInsets.symmetric(horizontal: 52),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Icon(Icons.delete, color: Colors.white),
+                  Text('Eliminar', style: TextStyle(color: Colors.white)),
+                ],
+
             ),
+
           ),
+        ),
           child: Card(
             key: ValueKey(_tasks[index]['taskName']),
             child: ListTile(

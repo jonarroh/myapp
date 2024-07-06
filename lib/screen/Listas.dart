@@ -149,13 +149,15 @@ class _ListasState extends State<Listas> {
                 },
               ),
               onTap: () {
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
                     builder: (context) => Tareaslist(
                       topic: _topics[index]['topic'],
                     ),
                   ),
+                      (route) => false,
+
                 );
               },
             ),

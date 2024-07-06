@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Lista de tareas',
       debugShowCheckedModeBanner: false,
       routes: rutas,
       theme: ThemeData(
